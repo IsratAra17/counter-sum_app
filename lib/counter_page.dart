@@ -16,20 +16,32 @@ class _Counter_pageState extends State<Counter_page> {
       appBar: AppBar(
         title: Text("Counter App"),
       ),
-      body: Center(
-        child: Text(countNumber.toString(),style:TextStyle(fontSize: 40),),
+      body:Padding(
+        padding: EdgeInsets.all(40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text("Sum is:"),
+            TextField(),
+            TextField(),
+            Container(child: ElevatedButton(onPressed: (){}, child: Text("ADD"))),
+            SizedBox(height: 40,width: double.infinity,),
+            Text(countNumber.toString(),style:TextStyle(fontSize: 20),),
+
+          ],
+        ),
+
       ),
 
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: (){
-          setState(() {
-            countNumber=countNumber+1;
-          });
-        },
+    child: Icon(Icons.add),
+    onPressed: (){
+    setState(() {
+    countNumber=countNumber+1;
+    });
+    },
 
-      ),
-
+    ),
     );
   }
 }
