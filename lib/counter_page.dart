@@ -9,6 +9,7 @@ class Counter_page extends StatefulWidget {
 }
 
 class _Counter_pageState extends State<Counter_page> {
+  int countNumber=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,12 +17,19 @@ class _Counter_pageState extends State<Counter_page> {
         title: Text("Counter App"),
       ),
       body: Center(
-        child: Text("Counting Number"),
+        child: Text(countNumber.toString(),style:TextStyle(fontSize: 40),),
       ),
+
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: (){},
+        onPressed: (){
+          setState(() {
+            countNumber=countNumber+1;
+          });
+        },
+
       ),
+
     );
   }
 }
