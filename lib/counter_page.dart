@@ -1,3 +1,4 @@
+import 'package:counter_app/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,12 +22,17 @@ class _Counter_pageState extends State<Counter_page> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text("Sum is:"),
-            TextField(),
-            TextField(),
-            Container(child: ElevatedButton(onPressed: (){}, child: Text("ADD"))),
+            Text("Sum is:",style: AppTextStyle(),),
+            SizedBox(height: 22,width: double.infinity,),
+            TextField(decoration: AppInputStyle("First Number"),),
+            SizedBox(height: 22,width: double.infinity,),
+            TextField(decoration: AppInputStyle("Second Number"),),
+            SizedBox(height: 22,width: double.infinity,),
+            Container(width:double.infinity,child: ElevatedButton(onPressed: (){},style: AppBtnStyle(), child: Text("ADD",style: TextStyle(color:Colors.black),))),
+
+
             SizedBox(height: 40,width: double.infinity,),
-            Text(countNumber.toString(),style:TextStyle(fontSize: 20),),
+            Text(countNumber.toString(),style:AppTextStyle()),
 
           ],
         ),
